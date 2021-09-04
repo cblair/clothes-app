@@ -1,21 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { Dimensions, StyleSheet, SafeAreaView, View, Text } from "react-native";
+import { useDimensions, useDeviceOrientation } from "@react-native-community/hooks";
+import WelcomeScreen from "./src/screens/WelcomeScreen";
+import ViewImageScreen from "./src/screens/ViewImageScreen";
+import AppText from "./src/components/AppText";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import ListingDetailsScreen from "./src/screens/ListingDetailsScreen";
+import MessagesScreen from "./src/screens/MessagesScreen";
+import MyAccountScreen from "./src/screens/MyAccountScreen";
+import ListScreen from "./src/screens/ListScreen";
+import { TextInput } from "react-native-gesture-handler";
+import AppTextInput from "./src/components/AppTextInput";
+import Screen from "./src/components/Screen";
 
 export default function App() {
+  console.log(Dimensions.get("screen"));
+
+  const { landscape } = useDeviceOrientation();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Screen>
+      <AppTextInput placeholder="Username" icon="email" />
+    </Screen>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // flex: 1,
+    // backgroundColor: "#fff",
+    // alignItems: "center",
+    // justifyContent: "center",
   },
 });

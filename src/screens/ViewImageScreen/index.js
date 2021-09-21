@@ -8,10 +8,10 @@ function ViewImageScreen({image}) {
     <SafeAreaView style={styles.view}>
       <View style={styles.icons}>
         <View style={styles.close}>
-          <Ionicons name="close" size={35} color="white" />
+          <Ionicons name="close" size={30} color="white" />
         </View>
         <View style={styles.trash}>
-          <Ionicons name="trash" size={35} color="white" />
+          <Ionicons name="trash" size={30} color="white" />
         </View>
       </View>
       <View style={styles.imageContainer}>

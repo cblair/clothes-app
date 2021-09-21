@@ -3,7 +3,7 @@ import { SafeAreaView } from 'react-native';
 import styles from "./styles";
 import Card from "../../components/Card";
 
-function ListScreen(props) {
+function ListScreen() {
   return (
     <SafeAreaView style={styles.list}>
       <Card 

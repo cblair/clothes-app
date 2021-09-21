@@ -6,6 +6,12 @@ import ViewImageScreen from "./src/screens/ViewImageScreen";
 import AppText from "./src/components/AppText";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import ListingDetailsScreen from "./src/screens/ListingDetailsScreen";
+import MessagesScreen from "./src/screens/MessagesScreen";
+import MyAccountScreen from "./src/screens/MyAccountScreen";
+import ListScreen from "./src/screens/ListScreen";
+import { TextInput } from "react-native-gesture-handler";
+import AppTextInput from "./src/components/AppTextInput";
+import Screen from "./src/components/Screen";
 
 export default function App() {
   console.log(Dimensions.get("screen"));
@@ -13,14 +19,9 @@ export default function App() {
   const { landscape } = useDeviceOrientation();
 
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: "center",
-      }}
-    >
-      <ViewImageScreen image={require("./src/assets/couch.jpg" )} />
-    </View>
+    <Screen>
+      <AppTextInput placeholder="Username" icon="email" />
+    </Screen>
   );
 }
 

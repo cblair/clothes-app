@@ -17,8 +17,12 @@ const styles = StyleSheet.create({
   },
   textItem: {
     fontWeight: "bold",
-    marginTop: 10
-  }
+    marginTop: 10,
+  },
+  subtitle: {
+    color: "green",
+    marginBottom: 20,
+  },
 });
 
 export default styles;

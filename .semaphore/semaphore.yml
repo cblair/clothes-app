@@ -1,13 +1,28 @@
 version: v1.0
-name: Initial Pipeline
+name: Semaphore React Native iOS Example Pipeline
 agent:
   machine:
-    type: e1-standard-2
-    os_image: ubuntu1804
+    type: a1-standard-4
+    os_image: macos-xcode12
 blocks:
-  - name: 'Block #1'
+  - name: Install dependencies
     task:
       jobs:
-        - name: 'Job #1'
+        - name: npm install and cache
           commands:
             - checkout
+            - cache restore
+            - npm install
+            - cache store
+  - name: Run tests
+    task:
+      prologue:
+        commands:
+          - checkout
+      jobs:
+        - name: test build and deploy
+          commands:
+            - cd ios
+            - pod install
+            - cd ..
+            - artifact push workflow ios/build/Build/Products/Release-iphonesimulator/ReactNativeSemaphoreNew.app

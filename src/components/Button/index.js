@@ -3,8 +3,6 @@ import { Text, TouchableOpacity, View } from 'react-native';
 
 import styles from "./styles";
 
-console.log({styles})
-
 function Button({title, secondary, children, onPress}) {
   return (
     <TouchableOpacity

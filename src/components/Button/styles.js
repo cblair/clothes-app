@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     width: "80%",
     minHeight: 40,
     alignItems: "center",
-    margin: 10,
+    width: "100%",
     justifyContent: "center",
     color: "white",
     borderRadius: 20,

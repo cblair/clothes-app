@@ -16,12 +16,25 @@ import AppPicker from "./src/components/AppPicker";
 import LoginScreen from "./src/screens/LoginScreen";
 import RegisterScreen from "./src/screens/RegisterScreen";
 import AAA from "./src/components/AAA";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+const Stack = createNativeStackNavigator();
+
+const Home = () => <View><Text>TEST</Text></View>
+
+console.log({screen: Stack.Screen})
 export default function App() {
   return (
-    <AAA unauthenticatedComponent={<LoginScreen />}>
-      <ListScreen />
-    </AAA>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          // options={{ title: 'Welcome' }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
